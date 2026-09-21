@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jev-research-agent"
+version = "0.1.0"
+description = "Jev Decision-Driven Research Agent: a LangGraph agent where a general LLM reasons and Jev decides."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "langgraph>=1.0",
+    "langchain>=1.0",
+    "langchain-core>=1.0",
+    "langchain-openai>=1.0",
+    "langchain-community>=0.3",
+    "typesafe-sdk>=0.7.0",
+    "pydantic>=2.9",
+    "python-dotenv>=1.0",
+    "duckduckgo-search>=8.0",
+    "ddgs>=9.0",
+    "tavily-python>=0.5",
+]
+
+[project.optional-dependencies]
+tracing = ["langsmith>=0.2"]
+anthropic = ["langchain-anthropic>=1.0"]
+google = ["langchain-google-genai>=1.0"]
+dev = ["pytest>=8.0"]
+all = [
+    "langsmith>=0.2",
+    "langchain-anthropic>=1.0",
+    "langchain-google-genai>=1.0",
+    "pytest>=8.0",
+]
+
+[project.scripts]
+jev-research-agent = "app.main:main"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
