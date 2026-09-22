@@ -1,5 +1,10 @@
 # Jev Decision-Driven Research Agent
 
+<img width="1037" height="952" alt="jev-mermaid" src="https://github.com/user-attachments/assets/2feb874f-c3f0-49e6-b0fe-60dc20133de6" />
+
+
+
+
 An experimental research agent built on LangGraph where the division of labour
 is explicit:
 
